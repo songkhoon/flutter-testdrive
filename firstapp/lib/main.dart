@@ -7,8 +7,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-        title: "Welcome to Flutter",
-        home: new Scaffold(body: new RandomWords()));
+      title: "Welcome to Flutter",
+      home: new RandomWords(),
+      theme: new ThemeData(primaryColor: Colors.orange),
+    );
   }
 }
 
