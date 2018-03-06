@@ -5,6 +5,8 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/build_layout/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/build_layout/build" />
       <excludeFolder url="file://$MODULE_DIR$/firstapp/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/firstapp/build" />
     </content>
