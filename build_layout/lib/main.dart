@@ -1,6 +1,6 @@
-import 'package:build_layout/BasicLayout.dart';
 import 'package:flutter/material.dart';
-
+import 'package:build_layout/BasicLayout.dart';
+import 'ContainerLayout.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -25,6 +25,7 @@ class MyAppWidget extends StatefulWidget {
 class MyAppWidgetState extends State<MyAppWidget> {
   final layoutTitles = <String>[
     "Basic Layout",
+    "Container"
     "Grid View",
     "List View",
     "Stack",
@@ -32,7 +33,8 @@ class MyAppWidgetState extends State<MyAppWidget> {
     "ListTile"
   ];
   final layoutWidgets = <Widget>[
-    new BasicLayout()
+    new BasicLayout(),
+    new ContainerLayout()
   ];
 
   @override
@@ -59,7 +61,7 @@ class MyAppWidgetState extends State<MyAppWidget> {
               ),
                 onTap: () {
                     Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
-                      return new BasicLayout();
+                      return layoutWidgets[i];
                     }));
                 },
               ),
