@@ -1,5 +1,6 @@
 import 'package:build_layout/GridViewLayout.dart';
 import 'package:build_layout/ListViewLayout.dart';
+import 'package:build_layout/StackLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:build_layout/BasicLayout.dart';
 import 'ContainerLayout.dart';
@@ -39,6 +40,7 @@ class MyAppWidgetState extends State<MyAppWidget> {
     new ContainerLayout(),
     new GridViewLayout(),
     new ListViewLayout(),
+    new StackLayout()
   ];
 
   @override
