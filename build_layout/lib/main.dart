@@ -34,7 +34,6 @@ class MyAppWidgetState extends State<MyAppWidget> {
     "List View",
     "Stack",
     "Card",
-    "ListTile"
   ];
   final layoutWidgets = <Widget>[
     new BasicLayout(),
