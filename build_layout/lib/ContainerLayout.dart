@@ -53,21 +53,12 @@ class ContainerLayoutState extends State<ContainerLayout> {
       ),
     );
 
-    return new MaterialApp(
-      home: new Scaffold(
+    return new Scaffold(
         appBar: new AppBar(
           title: new Text("Container"),
-          leading: new IconButton(
-              icon: new Icon(Icons.backspace),
-              onPressed: () {
-                Navigator.of(context).pop();
-              }
-          ),
         ),
         body: container,
-      ),
-      theme: new ThemeData(primaryColor: Colors.lightBlue),
-    );
+      );
   }
 
 }

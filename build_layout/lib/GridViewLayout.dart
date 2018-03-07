@@ -33,9 +33,6 @@ class GridViewLayoutState extends State<GridViewLayout> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.title),
-        leading: new IconButton(
-            icon: new Icon(Icons.backspace),
-            onPressed: () => Navigator.of(context).pop()),
       ),
       body: new Center(
         child: buildGrid(),

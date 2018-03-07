@@ -87,17 +87,31 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
 
     var rating = new Container(
         padding: const EdgeInsets.all(20.0),
-        child:
-        new Row(
+        child: new Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               new Row(
                 children: <Widget>[
-                  new Icon(Icons.star, color: Colors.black,),
-                  new Icon(Icons.star, color: Colors.black,),
-                  new Icon(Icons.star, color: Colors.black,),
-                  new Icon(Icons.star, color: Colors.black,),
-                  new Icon(Icons.star, color: Colors.black,),
+                  new Icon(
+                    Icons.star,
+                    color: Colors.black,
+                  ),
+                  new Icon(
+                    Icons.star,
+                    color: Colors.black,
+                  ),
+                  new Icon(
+                    Icons.star,
+                    color: Colors.black,
+                  ),
+                  new Icon(
+                    Icons.star,
+                    color: Colors.black,
+                  ),
+                  new Icon(
+                    Icons.star,
+                    color: Colors.black,
+                  ),
                 ],
               ),
               new Text(
@@ -107,59 +121,46 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
                     fontWeight: FontWeight.w800,
                     fontFamily: "Roboto",
                     letterSpacing: 0.5,
-                    fontSize: 20.0
-                ),
+                    fontSize: 20.0),
               )
-            ]
-        )
-    );
+            ]));
 
-    return new MaterialApp(
-      title: "Flutter Demo",
-      theme: new ThemeData(primarySwatch: Colors.orange),
-      home: new Scaffold(
-          appBar: new AppBar(
-            title: new Text("Basic Layout"),
-            leading: new IconButton(
-                icon: new Icon(Icons.backspace),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                }),
-          ),
-          body: new ListView(
-            children: <Widget>[
-              new Image.asset(
-                "images/lake.jpg",
-                width: 600.0,
-                height: 240.0,
-                fit: BoxFit.cover,
-              ),
-              titleSection,
-              buttonSection,
-              rating,
-              textSection,
-              new Row(
-                children: <Widget>[
-                  new Expanded(child: new Image.asset("images/lake.jpg")),
-                  new Expanded(
-                    child: new Container(
-                      decoration: new BoxDecoration(
-                        border:
-                            new Border.all(width: 5.0, color: Colors.black38),
-                        borderRadius:
-                            const BorderRadius.all(const Radius.circular(10.0)),
-                      ),
-                      margin: const EdgeInsets.all(10.0),
-                      child: new Image.asset("images/lake.jpg"),
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("Basic Layout"),
+        ),
+        body: new ListView(
+          children: <Widget>[
+            new Image.asset(
+              "images/lake.jpg",
+              width: 600.0,
+              height: 240.0,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            buttonSection,
+            rating,
+            textSection,
+            new Row(
+              children: <Widget>[
+                new Expanded(child: new Image.asset("images/lake.jpg")),
+                new Expanded(
+                  child: new Container(
+                    decoration: new BoxDecoration(
+                      border: new Border.all(width: 5.0, color: Colors.black38),
+                      borderRadius:
+                          const BorderRadius.all(const Radius.circular(10.0)),
                     ),
-                    flex: 2,
+                    margin: const EdgeInsets.all(10.0),
+                    child: new Image.asset("images/lake.jpg"),
                   ),
-                  new Expanded(child: new Image.asset("images/lake.jpg")),
-                ],
-              ),
-            ],
-            scrollDirection: Axis.vertical,
-          )),
-    );
+                  flex: 2,
+                ),
+                new Expanded(child: new Image.asset("images/lake.jpg")),
+              ],
+            ),
+          ],
+          scrollDirection: Axis.vertical,
+        ));
   }
 }
