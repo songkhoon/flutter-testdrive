@@ -76,13 +76,42 @@ class BasicLayoutState extends State<BasicLayout> {
     );
 
     Widget textSection = new Container(
-      padding: const EdgeInsets.all(32.0),
+      padding: const EdgeInsets.all(8.0),
       child: new Text(
         '''
 Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
         ''',
         softWrap: true,
       ),
+    );
+
+    var rating = new Container(
+        padding: const EdgeInsets.all(20.0),
+        child:
+        new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              new Row(
+                children: <Widget>[
+                  new Icon(Icons.star, color: Colors.black,),
+                  new Icon(Icons.star, color: Colors.black,),
+                  new Icon(Icons.star, color: Colors.black,),
+                  new Icon(Icons.star, color: Colors.black,),
+                  new Icon(Icons.star, color: Colors.black,),
+                ],
+              ),
+              new Text(
+                "170 Reviews",
+                style: new TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w800,
+                    fontFamily: "Roboto",
+                    letterSpacing: 0.5,
+                    fontSize: 20.0
+                ),
+              )
+            ]
+        )
     );
 
     return new MaterialApp(
@@ -107,6 +136,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
               ),
               titleSection,
               buttonSection,
+              rating,
               textSection,
               new Row(
                 children: <Widget>[
