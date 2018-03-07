@@ -1,3 +1,4 @@
+import 'package:build_layout/GridViewLayout.dart';
 import 'package:flutter/material.dart';
 import 'package:build_layout/BasicLayout.dart';
 import 'ContainerLayout.dart';
@@ -25,7 +26,7 @@ class MyAppWidget extends StatefulWidget {
 class MyAppWidgetState extends State<MyAppWidget> {
   final layoutTitles = <String>[
     "Basic Layout",
-    "Container"
+    "Container",
     "Grid View",
     "List View",
     "Stack",
@@ -34,7 +35,8 @@ class MyAppWidgetState extends State<MyAppWidget> {
   ];
   final layoutWidgets = <Widget>[
     new BasicLayout(),
-    new ContainerLayout()
+    new ContainerLayout(),
+    new GridViewLayout()
   ];
 
   @override
