@@ -1,3 +1,4 @@
+import 'package:build_layout/CardLayout.dart';
 import 'package:build_layout/GridViewLayout.dart';
 import 'package:build_layout/ListViewLayout.dart';
 import 'package:build_layout/StackLayout.dart';
@@ -40,7 +41,8 @@ class MyAppWidgetState extends State<MyAppWidget> {
     new ContainerLayout(),
     new GridViewLayout(),
     new ListViewLayout(),
-    new StackLayout()
+    new StackLayout(),
+    new CardLayout()
   ];
 
   @override
