@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  build_layout:
+    dependency: "direct main"
+    description:
+      path: build_layout
+      relative: true
+    source: path
+    version: "0.0.0"
   charcode:
     dependency: transitive
     description:
@@ -85,6 +92,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.1"
+  english_words:
+    dependency: transitive
+    description:
+      name: english_words
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
+  firstapp:
+    dependency: "direct main"
+    description:
+      path: firstapp
+      relative: true
+    source: path
+    version: "0.0.0"
   flutter:
     dependency: "direct main"
     description: flutter
