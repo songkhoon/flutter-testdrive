@@ -19,7 +19,7 @@ class ContainerLayoutState extends State<ContainerLayout> {
       ),
       margin: const EdgeInsets.all(4.0),
       padding: const EdgeInsets.all(4.0),
-      child: new Image.asset("images/lake.jpg"),
+      child: new Image.asset("images/lake.jpg", package: "build_layout",),
     );
 
     var container = new Container(

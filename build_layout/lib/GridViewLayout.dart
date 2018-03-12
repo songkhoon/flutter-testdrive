@@ -14,7 +14,7 @@ class GridViewLayoutState extends State<GridViewLayout> {
     return new List<Container>.generate(
         count,
         (index) => new Container(
-              child: new Image.asset("images/lake.jpg"),
+              child: new Image.asset("images/lake.jpg", package: "build_layout",),
             ));
   }
 

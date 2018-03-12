@@ -125,6 +125,8 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
               )
             ]));
 
+    var lakeImage = new Image.asset("images/lake.jpg", package: "build_layout",);
+
     return new Scaffold(
         appBar: new AppBar(
           title: new Text("Basic Layout"),
@@ -136,6 +138,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
               width: 600.0,
               height: 240.0,
               fit: BoxFit.cover,
+              package: "build_layout",
             ),
             titleSection,
             buttonSection,
@@ -143,7 +146,7 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
             textSection,
             new Row(
               children: <Widget>[
-                new Expanded(child: new Image.asset("images/lake.jpg")),
+                new Expanded(child: lakeImage),
                 new Expanded(
                   child: new Container(
                     decoration: new BoxDecoration(
@@ -152,11 +155,11 @@ Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situate
                           const BorderRadius.all(const Radius.circular(10.0)),
                     ),
                     margin: const EdgeInsets.all(10.0),
-                    child: new Image.asset("images/lake.jpg"),
+                    child: lakeImage,
                   ),
                   flex: 2,
                 ),
-                new Expanded(child: new Image.asset("images/lake.jpg")),
+                new Expanded(child: lakeImage),
               ],
             ),
           ],

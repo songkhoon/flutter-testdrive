@@ -14,7 +14,7 @@ class StackLayoutState extends State<StackLayout> {
     alignment: const Alignment(0.0, 0.6),
     children: [
       new CircleAvatar(
-        backgroundImage: new AssetImage("images/lake.jpg"),
+        backgroundImage: new AssetImage("images/lake.jpg", package: "build_layout"),
         radius: 100.0,
       ),
       new Container(
