@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testdrive/BatteryLevel.dart';
 import 'package:testdrive/TestDrive.dart';
 import 'package:build_layout/main.dart';
 import 'package:firstapp/main.dart';
@@ -49,13 +50,15 @@ class MyHomePageState extends State<MyHomePage> {
   final listTitle = <String>[
     "Test Drive",
     "First App",
-    "Layout"
+    "Layout",
+    "Battery Level"
   ];
 
   final listWidget = <Widget>[
     new TestDrive(),
     new RandomWords(),
     new MyAppWidget(),
+    new BatteryLevel(),
   ];
 
   List<Widget> list = <Widget>[
