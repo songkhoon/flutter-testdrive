@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testdrive/BatteryLevel.dart';
+import 'package:testdrive/ReadWriteFile.dart';
 import 'package:testdrive/TestDrive.dart';
 import 'package:build_layout/main.dart';
 import 'package:firstapp/main.dart';
@@ -51,7 +52,8 @@ class MyHomePageState extends State<MyHomePage> {
     "Test Drive",
     "First App",
     "Layout",
-    "Battery Level"
+    "Battery Level",
+    "Read Write File"
   ];
 
   final listWidget = <Widget>[
@@ -59,6 +61,7 @@ class MyHomePageState extends State<MyHomePage> {
     new RandomWords(),
     new MyAppWidget(),
     new BatteryLevel(),
+    new ReadWriteFile(),
   ];
 
   List<Widget> list = <Widget>[
@@ -73,28 +76,29 @@ class MyHomePageState extends State<MyHomePage> {
         appBar: new AppBar(
           title: new Text("Flutter"),
         ),
-        body: new ListView.builder(itemBuilder: (context, i) {
-          return new Container(
-            child: new Column(
-              children: <Widget>[
-                new ListTile(
-                  title: new Text(
-                    listTitle[i],
-                    style: const TextStyle(fontSize: 18.0),
+        body: new ListView.builder(
+          itemBuilder: (context, i) {
+            return new Container(
+              child: new Column(
+                children: <Widget>[
+                  new ListTile(
+                    title: new Text(
+                      listTitle[i],
+                      style: const TextStyle(fontSize: 18.0),
+                    ),
+                    onTap: () {
+                      Navigator
+                          .of(context)
+                          .push(new MaterialPageRoute(builder: (contest) {
+                        return listWidget[i];
+                      }));
+                    },
                   ),
-                  onTap: () {
-                    Navigator
-                        .of(context)
-                        .push(new MaterialPageRoute(builder: (contest) {
-                      return listWidget[i];
-                    }));
-                  },
-                ),
-                new Divider()
-              ],
-            ),
-          );
-        },
+                  new Divider()
+                ],
+              ),
+            );
+          },
           itemCount: listTitle.length,
         ));
   }
