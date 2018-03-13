@@ -37,14 +37,28 @@ class PageLayoutState extends State<PageLayout> {
               child: new Column(
                 children: <Widget>[
                   new RaisedButton(
-                    child: const Text("Long Button Name 1"),
+                    child: new Container(
+                      child: const Text(
+                        "Long Button Name 1",
+                        textAlign: TextAlign.center,
+                      ),
+                      width: MediaQuery.of(context).size.width / 2,
+                    ),
                     color: Colors.orange,
                     textColor: Colors.white,
                     onPressed: () {},
                   ),
-                  const SizedBox(height: 10.0,),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
                   new RaisedButton(
-                    child: const Text("Button 2"),
+                    child: new Container(
+                      child: const Text(
+                        "Button 2",
+                        textAlign: TextAlign.center,
+                      ),
+                      width: MediaQuery.of(context).size.width / 2,
+                    ),
                     onPressed: () {},
                   ),
                 ],
