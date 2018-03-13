@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testdrive/BatteryLevel.dart';
+import 'package:testdrive/PageLayout.dart';
 import 'package:testdrive/ReadWriteFile.dart';
 import 'package:testdrive/TestDrive.dart';
 import 'package:build_layout/main.dart';
@@ -53,7 +54,8 @@ class MyHomePageState extends State<MyHomePage> {
     "First App",
     "Layout",
     "Battery Level",
-    "Read Write File"
+    "Read Write File",
+    "Page Layout"
   ];
 
   final listWidget = <Widget>[
@@ -62,6 +64,7 @@ class MyHomePageState extends State<MyHomePage> {
     new MyAppWidget(),
     new BatteryLevel(),
     new ReadWriteFile(),
+    new PageLayout(),
   ];
 
   List<Widget> list = <Widget>[
