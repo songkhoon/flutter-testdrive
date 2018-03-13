@@ -9,13 +9,19 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:testdrive/User.dart';
+import 'package:testdrive/UserModel.dart';
 
 import 'package:testdrive/main.dart';
 
 final json = """
   {
     "name": "John Smith",
-    "email": "john@example.com"
+    "email": "john@example.com",
+    "gender": "male",
+    "cars":[
+      {"name": "car 1"},
+      {"name": "car 2"}
+    ]
   }
   """;
 
@@ -44,9 +50,28 @@ void main() {
 
     var mapUser = new User.fromJson(JSON.decode(json));
     print("user email: ${user['email']}");
+    print("gender: ${mapUser.gender}");
+    print("car count: ${mapUser.cars.length}");
+
+    print("${mapUser.cars}, ${mapUser.cars.runtimeType}");
+    print("name: ${mapUser.cars[0].name}, year: ${mapUser.cars[0].year}");
+
+    var allCars = mapUser.cars.map((car) => car.name).toList();
+    print("car names: $allCars");
 
     var newUser = new User(mapUser.name, mapUser.email);
+    print("address: ${newUser.address}");
+    expect(newUser.address, null);
     var newUserJson = newUser.toJson();
     print(newUserJson);
+  });
+
+  test("Test User Model", () {
+    var user = new UserModel.fromJson(JSON.decode(json));
+    print(user.toJson());
+
+    print("name: ${user.name}");
+    print("cars: ${user.cars}");
+    print(user.cars.map((car) => car.name).toList());
   });
 }
