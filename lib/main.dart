@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testdrive/AnimationPage.dart';
 import 'package:testdrive/BatteryLevel.dart';
 import 'package:testdrive/PageLayout.dart';
 import 'package:testdrive/ReadWriteFile.dart';
@@ -55,7 +56,8 @@ class MyHomePageState extends State<MyHomePage> {
     "Layout",
     "Battery Level",
     "Read Write File",
-    "Page Layout"
+    "Page Layout",
+    "Animation Page"
   ];
 
   final listWidget = <Widget>[
@@ -65,6 +67,7 @@ class MyHomePageState extends State<MyHomePage> {
     new BatteryLevel(),
     new ReadWriteFile(),
     new PageLayout(),
+    new AnimationPage(),
   ];
 
   List<Widget> list = <Widget>[
