@@ -5,6 +5,7 @@
 // are correct.
 
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -73,5 +74,25 @@ void main() {
     print("name: ${user.name}");
     print("cars: ${user.cars}");
     print(user.cars.map((car) => car.name).toList());
+  });
+
+  test("Post Test", () async {
+    var jsonData = {
+      "deviceId": "bbf290c070d187014deb87e12a6c19",
+    };
+    var url = "http://whoopie.boxes.pw:3004/users/checkUserCountry";
+    var httpClient = new HttpClient();
+    var request = await httpClient.postUrl(Uri.parse(url))
+    ..headers.contentType = ContentType.JSON
+    ..write(JSON.encode(jsonData));
+    var response = await request.close();
+    print(response.statusCode);
+    if(response.statusCode == HttpStatus.OK) {
+      var json = response.transform(UTF8.decoder).join()
+        ..then((result) {
+          print("result: ${result}");
+        });
+    }
+
   });
 }
