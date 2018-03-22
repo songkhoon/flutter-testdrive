@@ -16,6 +16,10 @@ dependencies:
 
   json_annotation: ^0.2.2
 
+  flutter_circular_chart:
+          git:
+            url: git://github.com/xqwzts/flutter_circular_chart.git
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
