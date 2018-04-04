@@ -6,6 +6,7 @@ import 'package:testdrive/DataTablePage.dart';
 import 'package:testdrive/GesturePage.dart';
 import 'package:testdrive/PageLayout.dart';
 import 'package:testdrive/ReadWriteFile.dart';
+import 'package:testdrive/SingleBar.dart';
 import 'package:testdrive/TestDrive.dart';
 import 'package:build_layout/main.dart';
 import 'package:firstapp/main.dart';
@@ -64,6 +65,7 @@ class MyHomePageState extends State<MyHomePage> {
     "Gesture Page",
     "Table Data",
     "Chart Page",
+    "Single Bar",
   ];
 
   final listWidget = <Widget>[
@@ -77,6 +79,7 @@ class MyHomePageState extends State<MyHomePage> {
     new GesturePage(),
     new DataTablePage(),
     new ChartPage(),
+    new SingleBar(),
   ];
 
   List<Widget> list = <Widget>[
