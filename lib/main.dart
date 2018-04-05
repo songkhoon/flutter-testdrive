@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:testdrive/AnimationPage.dart';
 import 'package:testdrive/BatteryLevel.dart';
-import 'package:testdrive/ChartPage.dart';
+import 'package:testdrive/CustomPainter/CustomPainterPage.dart';
 import 'package:testdrive/DataTablePage.dart';
 import 'package:testdrive/GesturePage.dart';
 import 'package:testdrive/PageLayout.dart';
 import 'package:testdrive/ReadWriteFile.dart';
-import 'package:testdrive/SingleBar.dart';
 import 'package:testdrive/TestDrive.dart';
 import 'package:build_layout/main.dart';
 import 'package:firstapp/main.dart';
@@ -64,8 +63,7 @@ class MyHomePageState extends State<MyHomePage> {
     "Animation Page",
     "Gesture Page",
     "Table Data",
-    "Chart Page",
-    "Single Bar",
+    "Custom Paint Page",
   ];
 
   final listWidget = <Widget>[
@@ -78,8 +76,7 @@ class MyHomePageState extends State<MyHomePage> {
     new AnimationPage(),
     new GesturePage(),
     new DataTablePage(),
-    new ChartPage(),
-    new SingleBar(),
+    new CustomPainterPage(),
   ];
 
   List<Widget> list = <Widget>[
@@ -99,20 +96,25 @@ class MyHomePageState extends State<MyHomePage> {
             return new Container(
               child: new Column(
                 children: <Widget>[
-                  new ListTile(
-                    title: new Text(
-                      listTitle[i],
-                      style: const TextStyle(fontSize: 18.0),
+                  new Container(
+                    child: new ListTile(
+                      title: new Text(
+                        listTitle[i],
+                        style: const TextStyle(fontSize: 18.0),
+                      ),
+                      onTap: () {
+                        Navigator
+                            .of(context)
+                            .push(new MaterialPageRoute(builder: (contest) {
+                          return listWidget[i];
+                        }));
+                      },
                     ),
-                    onTap: () {
-                      Navigator
-                          .of(context)
-                          .push(new MaterialPageRoute(builder: (contest) {
-                        return listWidget[i];
-                      }));
-                    },
+                    height: 30.0,
                   ),
-                  new Divider()
+                  new Divider(
+                    height: 8.0,
+                  )
                 ],
               ),
             );
