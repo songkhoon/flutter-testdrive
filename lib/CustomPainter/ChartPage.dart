@@ -39,10 +39,13 @@ class ChartPageState extends State<ChartPage> with TickerProviderStateMixin {
         title: const Text("Chart Page"),
       ),
       body: new Center(
-        child: new CustomPaint(
-          size: new Size(200.0, 100.0),
-          painter: new BarChartPainter(tween.animate(animation)),
-        ),
+        child: new Container(
+          color: Colors.orange,
+          child: new CustomPaint(
+            size: new Size(100.0, 100.0),
+            painter: new BarChartPainter(tween.animate(animation)),
+          ),
+        )
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: changeData,

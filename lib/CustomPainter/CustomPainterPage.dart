@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testdrive/CustomPainter/BarChart.dart';
 import 'package:testdrive/CustomPainter/ChartPage.dart';
+import 'package:testdrive/CustomPainter/MultipleBarChart.dart';
 import 'package:testdrive/CustomPainter/SingleBar.dart';
 
 class CustomPainterPage extends StatefulWidget {
@@ -13,12 +14,14 @@ class CustomPainterPageState extends State<CustomPainterPage> {
     "Chart Page",
     "Single Bar",
     "Bar Chart",
+    "Multiple Chart",
   ];
 
   final listWidget = <Widget>[
     new ChartPage(),
     new SingleBar(),
     new BarChartStateful(),
+    new MultipleBarChart(),
   ];
 
   @override
