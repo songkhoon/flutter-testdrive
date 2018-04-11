@@ -4,6 +4,7 @@ import 'package:testdrive/BatteryLevel.dart';
 import 'package:testdrive/CustomPainter/CustomPainterPage.dart';
 import 'package:testdrive/DataTablePage.dart';
 import 'package:testdrive/GesturePage.dart';
+import 'package:testdrive/MVP/Contacts/view/contact_view.dart';
 import 'package:testdrive/PageLayout.dart';
 import 'package:testdrive/ReadWriteFile.dart';
 import 'package:testdrive/TestDrive.dart';
@@ -64,6 +65,7 @@ class MyHomePageState extends State<MyHomePage> {
     "Gesture Page",
     "Table Data",
     "Custom Paint Page",
+    "MVP Architecture"
   ];
 
   final listWidget = <Widget>[
@@ -77,6 +79,7 @@ class MyHomePageState extends State<MyHomePage> {
     new GesturePage(),
     new DataTablePage(),
     new CustomPainterPage(),
+    new ContactList(),
   ];
 
   List<Widget> list = <Widget>[

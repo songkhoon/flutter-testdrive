@@ -20,6 +20,8 @@ dependencies:
           git:
             url: git://github.com/xqwzts/flutter_circular_chart.git
 
+  intl: "^0.15.4"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
