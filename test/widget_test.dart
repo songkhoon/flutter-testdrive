@@ -14,7 +14,7 @@ import 'package:testdrive/UserModel.dart';
 
 import 'package:testdrive/main.dart';
 
-final json = """
+final jsonData = """
   {
     "name": "John Smith",
     "email": "john@example.com",
@@ -45,11 +45,11 @@ void main() {
   });
 
   test('Test Json', () {
-    print(json);
-    Map<String, dynamic> user = JSON.decode(json);
+    print(jsonData);
+    Map<String, dynamic> user = json.decode(jsonData);
     print("user name: ${user['name']}.");
 
-    var mapUser = new User.fromJson(JSON.decode(json));
+    var mapUser = new User.fromJson(json.decode(jsonData));
     print("user email: ${user['email']}");
     print("gender: ${mapUser.gender}");
     print("car count: ${mapUser.cars.length}");
@@ -68,7 +68,7 @@ void main() {
   });
 
   test("Test User Model", () {
-    var user = new UserModel.fromJson(JSON.decode(json));
+    var user = new UserModel.fromJson(json.decode(jsonData));
     print(user.toJson());
 
     print("name: ${user.name}");
@@ -84,7 +84,7 @@ void main() {
     var httpClient = new HttpClient();
     var request = await httpClient.postUrl(Uri.parse(url))
       ..headers.contentType = ContentType.JSON
-      ..write(JSON.encode(jsonData));
+      ..write(json.encode(jsonData));
     var response = await request.close();
     print(response.statusCode);
     if (response.statusCode == HttpStatus.OK) {
