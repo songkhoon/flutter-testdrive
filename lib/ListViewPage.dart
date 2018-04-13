@@ -7,35 +7,31 @@ class ListViewPage extends StatefulWidget {
   ListViewPage(this.title, this.listView);
 
   @override
-  _ListViewPageState createState() => new _ListViewPageState(this);
+  _ListViewPageState createState() => new _ListViewPageState();
 }
 
 class _ListViewPageState extends State<ListViewPage> {
-  final ListViewPage _listViewPage;
-
-  _ListViewPageState(this._listViewPage);
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text(_listViewPage.title),
+        title: new Text(widget.title),
       ),
       body: new ListView.builder(
-          itemCount: _listViewPage.listView.length,
+          itemCount: widget.listView.length,
           itemBuilder: (context, i) {
             return new Column(children: <Widget>[
               new Container(
                 child: new ListTile(
                   title: new Text(
-                    _listViewPage.listView.keys.toList()[i],
+                    widget.listView.keys.toList()[i],
                     style: const TextStyle(fontSize: 18.0),
                   ),
                   onTap: () {
                     Navigator
                         .of(context)
                         .push(new MaterialPageRoute(builder: (context) {
-                      return _listViewPage.listView.values.toList()[i];
+                      return widget.listView.values.toList()[i];
                     }));
                   },
                 ),
