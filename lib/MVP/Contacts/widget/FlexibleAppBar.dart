@@ -27,7 +27,7 @@ class FlexibleAppBar extends SliverAppBar {
                 gradient: new LinearGradient(
                     colors: <Color>[
               const Color(0x000000),
-              const Color(0x9000000)
+              const Color(0x900000)
             ],
                     begin: const FractionalOffset(0.0, 0.6),
                     end: const FractionalOffset(0.0, 1.0))))

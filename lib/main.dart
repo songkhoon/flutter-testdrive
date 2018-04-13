@@ -4,7 +4,9 @@ import 'package:testdrive/BatteryLevel.dart';
 import 'package:testdrive/CustomPainter/CustomPainterPage.dart';
 import 'package:testdrive/DataTablePage.dart';
 import 'package:testdrive/GesturePage.dart';
+import 'package:testdrive/ListViewPage.dart';
 import 'package:testdrive/MVP/Contacts/view/contact_view.dart';
+import 'package:testdrive/MVP/CryptoApp/CryptoView.dart';
 import 'package:testdrive/PageLayout.dart';
 import 'package:testdrive/ReadWriteFile.dart';
 import 'package:testdrive/TestDrive.dart';
@@ -54,33 +56,26 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> {
-  final listTitle = <String>[
-    "Test Drive",
-    "First App",
-    "Layout",
-    "Battery Level",
-    "Read Write File",
-    "Page Layout",
-    "Animation Page",
-    "Gesture Page",
-    "Table Data",
-    "Custom Paint Page",
-    "MVP Architecture"
-  ];
+  final _mvpWidgets = {
+    "Contact List": new ContactList(),
+    "Crypto App": new CryptoView(),
+  };
 
-  final listWidget = <Widget>[
-    new TestDrive(),
-    new RandomWords(),
-    new MyAppWidget(),
-    new BatteryLevel(),
-    new ReadWriteFile(),
-    new PageLayout(),
-    new AnimationPage(),
-    new GesturePage(),
-    new DataTablePage(),
-    new CustomPainterPage(),
-    new ContactList(),
-  ];
+  Map<String, Widget> get _homePageWidgets {
+    return {
+      "Test Drive": new TestDrive(),
+      "First App": new RandomWords(),
+      "Layout": new MyAppWidget(),
+      "Battery Level": new BatteryLevel(),
+      "Read Write File": new ReadWriteFile(),
+      "Page Layout": new PageLayout(),
+      "Animation Page": new AnimationPage(),
+      "Gesture Page": new GesturePage(),
+      "Table Data": new DataTablePage(),
+      "Custom Paint Page": new CustomPainterPage(),
+      "MVP Architecture": new ListViewPage("MVP Architecture", _mvpWidgets),
+    };
+  }
 
   List<Widget> list = <Widget>[
     new ListTile(
@@ -90,39 +85,6 @@ class MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Flutter"),
-        ),
-        body: new ListView.builder(
-          itemBuilder: (context, i) {
-            return new Container(
-              child: new Column(
-                children: <Widget>[
-                  new Container(
-                    child: new ListTile(
-                      title: new Text(
-                        listTitle[i],
-                        style: const TextStyle(fontSize: 18.0),
-                      ),
-                      onTap: () {
-                        Navigator
-                            .of(context)
-                            .push(new MaterialPageRoute(builder: (contest) {
-                          return listWidget[i];
-                        }));
-                      },
-                    ),
-                    height: 30.0,
-                  ),
-                  new Divider(
-                    height: 8.0,
-                  )
-                ],
-              ),
-            );
-          },
-          itemCount: listTitle.length,
-        ));
+    return new ListViewPage("Flutter", _homePageWidgets);
   }
 }
